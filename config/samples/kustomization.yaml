@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- tables_v1alpha1_icebergtable.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

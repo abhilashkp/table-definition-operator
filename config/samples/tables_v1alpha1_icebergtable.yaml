@@ -1,0 +1,25 @@
+apiVersion: tables.example.com/v1alpha1
+kind: IcebergTable
+metadata:
+  name: customer-transactionsu
+spec:
+  catalog:
+    name: polaris
+    type: rest
+    warehouse: abfs://datalake@storageaccount.dfs.core.windows.net/warehouse
+  database: customer
+  table: transactions
+  schema:
+    - name: id
+      type: long
+      required: true
+    - name: amount
+      type: double
+      required: true
+  partitionSpec:
+    - name: date
+      transform: day
+  properties:
+    write.format.default: parquet
+  retentionPolicy:
+    snapshotExpirationDays: 21
