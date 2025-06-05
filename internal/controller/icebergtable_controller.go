@@ -63,6 +63,7 @@ func (r *IcebergTableReconciler) Reconcile(ctx context.Context, req ctrl.Request
 	// Print table name and retention policy
 	log := log.FromContext(ctx)
 	log.Info("Reconciling IcebergTable",
+		"DataProduct", icebergTable.Spec.DataProduct,
 		"Table", icebergTable.Spec.Table,
 		"SnapshotExpirationDays", icebergTable.Spec.RetentionPolicy.SnapshotExpirationDays)
 

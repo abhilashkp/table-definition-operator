@@ -27,6 +27,7 @@ type RetentionPolicy struct {
 }
 
 type IcebergTableSpec struct {
+	DataProduct     string            `json:"dataProduct"`
 	Catalog         CatalogSpec       `json:"catalog"`
 	Database        string            `json:"database"`
 	Table           string            `json:"table"`

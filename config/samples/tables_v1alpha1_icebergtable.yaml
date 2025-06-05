@@ -1,14 +1,15 @@
 apiVersion: tables.example.com/v1alpha1
 kind: IcebergTable
 metadata:
-  name: customer-transactionsu
+  name: customer-transactions-2
 spec:
+  dataProduct: esg  # <-- Added new field
   catalog:
     name: polaris
     type: rest
     warehouse: abfs://datalake@storageaccount.dfs.core.windows.net/warehouse
   database: customer
-  table: transactions
+  table: transactions-2
   schema:
     - name: id
       type: long

@@ -50,6 +50,8 @@ spec:
                 - type
                 - warehouse
                 type: object
+              dataProduct:
+                type: string
               database:
                 type: string
               partitionSpec:
@@ -93,6 +95,7 @@ spec:
                 type: string
             required:
             - catalog
+            - dataProduct
             - database
             - retentionPolicy
             - schema

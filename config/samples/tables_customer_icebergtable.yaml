@@ -3,6 +3,7 @@ kind: IcebergTable
 metadata:
   name: customer-info
 spec:
+  dataProduct: esg  # <-- ✅ Add your new field here
   catalog:
     name: polaris
     type: rest
@@ -19,7 +20,6 @@ spec:
     - name: email
       type: string
       required: false
-      
   partitionSpec:
     - name: date
       transform: day
