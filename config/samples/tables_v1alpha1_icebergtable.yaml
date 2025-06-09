@@ -1,7 +1,7 @@
 apiVersion: tables.example.com/v1alpha1
 kind: IcebergTable
 metadata:
-  name: customer-transactions-2
+  name: customer-transactions-100
 spec:
   dataProduct: esg  # <-- Added new field
   catalog:
@@ -9,7 +9,7 @@ spec:
     type: rest
     warehouse: abfs://datalake@storageaccount.dfs.core.windows.net/warehouse
   database: customer
-  table: transactions-2
+  table: transactions-100
   schema:
     - name: id
       type: long
@@ -23,4 +23,4 @@ spec:
   properties:
     write.format.default: parquet
   retentionPolicy:
-    snapshotExpirationDays: 21
+    snapshotExpirationDays: 9

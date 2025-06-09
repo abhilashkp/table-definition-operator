@@ -95,7 +95,7 @@ func (r *IcebergTableReconciler) provisionIcebergTable(ctx context.Context, iceb
 		"jsonPayload", string(jsonData))
 
 	log.Info("Making HTTP POST call to provision Iceberg table based on custom resource",
-		"url", "http://localhost:8081/provision-iceberg-table",
+		"url", "http://localhost:8082/provision-iceberg-table",
 		"resourceName", icebergTable.Name,
 		"tableIdentifier", fmt.Sprintf("%s.%s", spec.Database, spec.Table))
 
@@ -105,7 +105,7 @@ func (r *IcebergTableReconciler) provisionIcebergTable(ctx context.Context, iceb
 	}
 
 	// Create the POST request with the CR-generated payload
-	req, err := http.NewRequestWithContext(ctx, "POST", "http://localhost:8081/provision-iceberg-table", bytes.NewBuffer(jsonData))
+	req, err := http.NewRequestWithContext(ctx, "POST", "http://localhost:8082/provision-iceberg-table", bytes.NewBuffer(jsonData))
 	if err != nil {
 		return fmt.Errorf("failed to create HTTP request for custom resource %s: %w", icebergTable.Name, err)
 	}

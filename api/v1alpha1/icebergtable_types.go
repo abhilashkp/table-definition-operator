@@ -19,7 +19,7 @@ type PartitionField struct {
 type CatalogSpec struct {
 	Name      string `json:"name"`
 	Type      string `json:"type"`
-	Warehouse string `json:"warehouse"`
+	Warehouse string `json:"warehouse,omitempty"`
 }
 
 type RetentionPolicy struct {
